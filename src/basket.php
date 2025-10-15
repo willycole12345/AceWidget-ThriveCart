@@ -17,7 +17,7 @@ class Basket {
 
     public function add(string $code): void {
         if (!isset($this->catalog[$code])) {
-          //  throw new \InvalidArgumentException("Invalid product code: $code");
+        
           echo 'Invalid product code :' .$code ;
         }
         $this->items[] = $this->catalog[$code];
@@ -29,4 +29,6 @@ class Basket {
         $delivery = $this->delivery->getCharge($subtotal - $discount);
         return round($subtotal - $discount + $delivery, 2);
     }
+
+
 }
